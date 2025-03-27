@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerência Empregados</title>
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+      <h1>Empregados</h1>
+      <hr>
+      <h2>Cadastra Empregados</h2>
+
+      <form action="#" th:action="@{/salvaEmpregado}" th:object="${empregado}"
+            method="POST">
+        <input type="text" th:field="*{nome}"
+               placeholder="Nome do Empregado" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{sobrenome}"
+               placeholder="Sobre Nome do Empregado" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{email}"
+               placeholder="Employee Email" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Cadastra Empregado</button>
+      </form>
+
+      <hr>
+
+      <a th:href = "@{/}"> Voltar</a>
+    </div>
+
+</body>
+</html>
